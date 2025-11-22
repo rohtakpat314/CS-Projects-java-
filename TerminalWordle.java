@@ -1,19 +1,9 @@
-///////////////////////// TOP OF FILE COMMENT BLOCK ////////////////////////////
-//
-// Author:          Rohtak Patwardhan
-// Email:           rspatwardha2@wisc.edu
-//
-// Project:         Terminal Wordle 
-// 
-//
-///////////////////////////////// CITATIONS ////////////////////////////////////
-//
-// AI ; helped me with generating a word bank and using color in the terminal  
-// 
-//  
-//         
-//
-/////////////////////////////// 80 COLUMNS WIDE ////////////////////////////////
+/**
+ * Author: Rohtak Patwardhan
+ * Email: rspatwardha2@wisc.edu
+ * Citations: ChatGPT helped with 200 random words and adding colors
+ * 
+ */
 
 import java.util.Scanner; 
 import java.util.Random; 
@@ -24,6 +14,7 @@ import java.util.ArrayList;
  * Bugs: none known
  *
  * @author Rohtak Patwardhan
+ * 
  */
 
 public class TerminalWordle {
@@ -34,6 +25,7 @@ public class TerminalWordle {
      * Main method used to simply call the instructions and playGame methods. 
      * This format was intentionally chosen for modularity and complexity.
      * @param args 
+     * 
      */
 
     public static void main(String [] args) { 
@@ -46,30 +38,50 @@ public class TerminalWordle {
     /**
      * This method contains a Word Bank that has 200 AI-generated random words.
      * @return returns a word bank to the playGame method
+     * 
      */
 
     public static String[] wordBank() {
 
         return new String[] {
-            "APPLE","BRAIN","CRANE","PLANT","GRASS","STONE","BRICK","TRAIL","SHINE","GHOST",
-            "FLASH","SHARE","PRIME","GLASS","FRAME","CLOUD","WATER","FROST","SNAKE","TIGER",
-            "MONEY","SMILE","PAPER","QUICK","SWEET","HEART","LIGHT","NIGHT","EARTH","SOUND",
-            "ROUND","SOUTH","NORTH","EAGLE","SPICE","SUGAR","BREAD","FRUIT","GRAPE","MANGO",
-            "LEMON","PEACH","BERRY","OLIVE","STEEL","METAL","COPPER","SILKY","BLEND","CLEAN",
-            "CLEAR","MATCH","CATCH","THINK","TEACH","LEARN","WRITE","READS","DRIVE","RIDER",
-            "MOTOR","ROBOT","LASER","SOLAR","LUNAR","RIVER","OCEAN","SHORE","BLOOM","LEAFY",
-            "WOODS","FIELD","HOUSE","ROOMS","CHAIR","TABLE","FLOOR","CELEB","STARS","NOBLE",
-            "ROYAL","MAGIC","SPELL","POWER","GIANT","SMALL","WHEEL","SPEED","SHIFT","BRAKE",
-            "BUILD","MAKER","CRAFT","SKILL","TOOLS","SMART","LOGIC","ARRAY","CLASS","OBJECT",
-            "VALUE","INPUT","DEBUG","LOOPS","STACK","QUEUE","ERROR","CLOSE","OPENN","BEGIN",
-            "FINAL","TRUST","FAITH","LUCKY","HAPPY","ANGRY","TIRED","BOOST","BRAVE","UNITY",
-            "FOCUS","SHARP","BLUNT","POINT","SCORE","LEVEL","QUEST","MAPLE","EMBER","FLAME",
-            "RANGE","SLOPE","DELTA","SIGMA","TANGO","DELVE","FORCE","SHAPE","COLOR","PAINT",
-            "MUSIC","NOTES","RHYME","SONIC","VIBES","GAMER","PIXEL","BOARD","CARDS","DREAM",
-            "GUIDE","START","ENTER","ALERT","CHECK","CHAIN","PLANE","TRAIN","BASIC","SUPER",
-            "CROWN","WORLD","SPACE","ALIEN","HOVER","STORM","WINDY","CHILL","SPARK","CABLE",
-            "LATCH","NERVE","SCOPE","FRAME","TRACE","MODEL","FOAMY","SHOUT","WHISP","GRIND",
-            "SHEET","METRO","URBAN","RUSTY","SHOVE","CLIMB","REACH","PLUCK","GRASP","SHIFT"
+            "APPLE","BRAIN","CRANE","PLANT","GRASS",
+            "STONE","BRICK","TRAIL","SHINE","GHOST",
+            "FLASH","SHARE","PRIME","GLASS","FRAME",
+            "CLOUD","WATER","FROST","SNAKE","TIGER",
+            "MONEY","SMILE","PAPER","QUICK","SWEET",
+            "HEART","LIGHT","NIGHT","EARTH","SOUND",
+            "ROUND","SOUTH","NORTH","EAGLE","SPICE",
+            "SUGAR","BREAD","FRUIT","GRAPE","MANGO",
+            "LEMON","PEACH","BERRY","OLIVE","STEEL",
+            "METAL","COPPER","SILKY","BLEND","CLEAN",
+            "CLEAR","MATCH","CATCH","THINK","TEACH",
+            "LEARN","WRITE","READS","DRIVE","RIDER",
+            "MOTOR","ROBOT","LASER","SOLAR","LUNAR",
+            "RIVER","OCEAN","SHORE","BLOOM","LEAFY",
+            "WOODS","FIELD","HOUSE","ROOMS","CHAIR",
+            "TABLE","FLOOR","CELEB","STARS","NOBLE",
+            "ROYAL","MAGIC","SPELL","POWER","GIANT",
+            "SMALL","WHEEL","SPEED","SHIFT","BRAKE",
+            "BUILD","MAKER","CRAFT","SKILL","TOOLS",
+            "SMART","LOGIC","ARRAY","CLASS","OBJECT",
+            "VALUE","INPUT","DEBUG","LOOPS","STACK",
+            "QUEUE","ERROR","CLOSE","OPENN","BEGIN",
+            "FINAL","TRUST","FAITH","LUCKY","HAPPY",
+            "ANGRY","TIRED","BOOST","BRAVE","UNITY",
+            "FOCUS","SHARP","BLUNT","POINT","SCORE",
+            "LEVEL","QUEST","MAPLE","EMBER","FLAME",
+            "RANGE","SLOPE","DELTA","SIGMA","TANGO",
+            "DELVE","FORCE","SHAPE","COLOR","PAINT",
+            "MUSIC","NOTES","RHYME","SONIC","VIBES",
+            "GAMER","PIXEL","BOARD","CARDS","DREAM",
+            "GUIDE","START","ENTER","ALERT","CHECK",
+            "CHAIN","PLANE","TRAIN","BASIC","SUPER",
+            "CROWN","WORLD","SPACE","ALIEN","HOVER",
+            "STORM","WINDY","CHILL","SPARK","CABLE",
+            "LATCH","NERVE","SCOPE","FRAME","TRACE",
+            "MODEL","FOAMY","SHOUT","WHISP","GRIND",
+            "SHEET","METRO","URBAN","RUSTY","SHOVE",
+            "CLIMB","REACH","PLUCK","GRASP","SHIFT"
         };
     }
 
@@ -78,6 +90,7 @@ public class TerminalWordle {
      * array length, inclusive and exclusively respectively. 
      * @param bank (takes the bank parameter, which is an array of words)
      * @return (returns a random word from the bank to playGame)
+     * 
      */ 
 
     public static String pickRandomWord(String[] bank) { 
@@ -94,6 +107,7 @@ public class TerminalWordle {
      * The board displays how the random / secret word contains 5 characters. 
      * @param guesses (stores the guesses the user takes when playing Wordle)
      * @param evaluation (stores how each each letter matches the secret word)
+     * 
      */ 
 
     public static void printBoard(ArrayList<String> guesses, int[][] evaluation) { 
@@ -114,7 +128,8 @@ public class TerminalWordle {
     
     /**
      * The following static objects define the colors used in the program to 
-     * differentiate between whether a letter is correct, incorrect, or used. 
+     * differentiate between whether a letter is correct, incorrect, or used.
+     *  
      */ 
 
     public static String GREEN = "\u001B[42m";
@@ -127,6 +142,7 @@ public class TerminalWordle {
      * color, depending on how the word the user entered matches the answer.
      * @param guess (used to store the guess of the user)
      * @param result (array used to associate guess result with colors)
+     * 
      */ 
 
     public static void printGuess(String guess, int[] result) {
@@ -184,37 +200,35 @@ public class TerminalWordle {
             printBoard(guesses,evaluation);
 
             String guess = scnr.next();
-            
-            boolean isOkay = true; 
 
-            while (isOkay) { 
-                isOkay = false; 
+            while (guess.length() < 5 || guess.length() > 5 ) { // checks input
+                System.out.println("Please enter a new word");
+                guess = scnr.next(); 
+            }
+            
+            boolean inputInvalid = true; 
+
+            while (inputInvalid) { 
+                inputInvalid = false; 
                 for (int i = 0; i < 5; i++) {
-                    if (guess.charAt(i) < 65 || guess.charAt(i) > 122) { // Appl, 
+                    if (guess.charAt(i) < 65 || guess.charAt(i) > 122) { 
                         System.out.println("Please enter a new word"); 
                         guess = scnr.next(); 
-                        isOkay = true;    
+                        inputInvalid = true;    
                     }
                 }
                 for (int j = 0; j < 5; j++) {
                     if (guess.charAt(j) <= 96 && guess.charAt(j) >= 91) {
                         System.out.println("Please enter a new word"); 
                         guess = scnr.next();
-                        isOkay = true;
+                        inputInvalid = true;
                     }
                 }
-                
+
             }
             
-            
-
             guess = guess.trim().toUpperCase(); // stores guess
-            
-
-            if (guess.length() != 5) { // checks if user word is valid 
-                System.out.println("Invalid guess. Please enter a 5 letter word.");
-                continue; 
-            }
+        
  
             int[] result = new int[5]; 
             
@@ -254,6 +268,7 @@ public class TerminalWordle {
     /**
      * Prints Instructions for the user to follow 
      * Called by main method
+     * 
      */ 
     
     public static void printInstructions() {
